@@ -1,0 +1,59 @@
+aside {
+	@include size(90%, 100%);
+	@include radius-corners(10px, null, 10px, null);
+	position: relative;
+	padding: 20px;
+	background-image: linear-gradient(120deg, #6A5FDD 0%, #241D8C 100%);
+
+	strong {
+		@include size(100%, auto, block);
+		@include text(25px, center, #fff);
+		margin: 10px 0;
+	}
+
+	form {
+		@include grid(100%, repeat(5, 100% / 5));
+
+		.input-group {
+			@include grid(50% 50%, 100%);
+		}
+	
+		.input-block {
+			@include grid(100%, auto 40px);
+			padding: 5px;
+
+			&.enviar {
+				grid-template-rows: auto;
+			}
+
+			label {
+				padding: 5px 0;
+				color: #fff;
+			}
+	
+			input {
+				@include size(100%, auto);
+				@include text(16px, null, #777);
+				padding: 5px;
+				font-size: 15px;
+				border: 1px solid transparentize($color: #000000, $amount: .9);
+				border-radius: 5px;
+			}
+			
+			button {
+				@include size(100%, 50px);
+				@include text(14px, null, #fff);
+				margin: 10px 0 0 0;
+				border: none;
+				border-radius: 5px;
+				background-color: #7d40e7;
+				transition: .3s;
+
+				&:hover {
+					background-color: #6931ca;
+				}
+			}
+		}
+	}
+}
+
