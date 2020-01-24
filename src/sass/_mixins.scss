@@ -33,3 +33,10 @@
 	border-bottom-left-radius: $bottom-left;
 	border-bottom-right-radius: $bottom-right;
 }
+
+@mixin bg($url:null, $repeat:null, $position:null, $size:null) {
+	background-image: url($url);
+	background-repeat: $repeat;
+	background-position: $position;
+	background-size: $size;
+}

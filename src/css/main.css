@@ -1,20 +1,41 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none; }
+
+html, body, #root {
+  height: 100vh;
+  background-color: #F9F9F9; }
+
+body {
+  background-color: #e5e6f0;
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.none {
+  display: none !important; }
+
 aside {
   width: 90%;
   height: 100%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   position: relative;
+  overflow: hidden;
   padding: 20px;
-  background-image: linear-gradient(120deg, #6A5FDD 0%, #241D8C 100%); }
-  aside strong {
+  background: linear-gradient(120deg, #6A5FDD 0%, #241D8C 100%); }
+  aside h1 {
     display: block;
     width: 100%;
     height: auto;
-    font-size: 25px;
+    font-size: 35px;
     text-align: center;
     color: #fff;
-    margin: 10px 0; }
+    margin: 30px 0 20px 0; }
   aside form {
     display: grid;
     grid-template-columns: 100%;
@@ -27,9 +48,55 @@ aside {
       display: grid;
       grid-template-columns: 100%;
       grid-template-rows: auto 40px;
+      position: relative;
       padding: 5px; }
       aside form .input-block.enviar {
         grid-template-rows: auto; }
+      aside form .input-block .check-block {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        position: relative;
+        height: 40px;
+        align-items: center; }
+        aside form .input-block .check-block .checkbox {
+          position: relative; }
+          aside form .input-block .check-block .checkbox input[type="checkbox"] {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: -2px;
+            left: 0;
+            opacity: 0;
+            z-index: 2; }
+          aside form .input-block .check-block .checkbox label {
+            position: relative;
+            display: inline-block;
+            padding-left: 25px; }
+            aside form .input-block .check-block .checkbox label:before, aside form .input-block .check-block .checkbox label:after {
+              content: "";
+              position: absolute;
+              display: inline-block; }
+            aside form .input-block .check-block .checkbox label:before {
+              width: 16px;
+              height: 16px;
+              position: absolute;
+              top: 5px;
+              left: 0;
+              border-radius: 50%;
+              border: 1px solid #fff; }
+            aside form .input-block .check-block .checkbox label:after {
+              width: 8px;
+              height: 8px;
+              position: absolute;
+              top: 10px;
+              left: 5px;
+              border-radius: 50%;
+              background-color: #fff; }
+          aside form .input-block .check-block .checkbox input[type="checkbox"] + label::after {
+            content: none; }
+          aside form .input-block .check-block .checkbox input[type="checkbox"]:checked + label::after {
+            content: ""; }
       aside form .input-block label {
         padding: 5px 0;
         color: #fff; }
@@ -45,8 +112,10 @@ aside {
       aside form .input-block button {
         width: 100%;
         height: 50px;
-        font-size: 14px;
+        font-size: 17px;
+        text-align: center;
         color: #fff;
+        font-weight: bold;
         margin: 10px 0 0 0;
         border: none;
         border-radius: 5px;
@@ -70,75 +139,165 @@ main {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
-  padding: 20px 0; }
+  padding: 0 0 20px 0; }
+  main h1 {
+    display: table;
+    width: 100%;
+    height: auto;
+    font-size: 35px;
+    text-align: left;
+    color: #241D8C;
+    position: relative;
+    margin: 50px 0 50px 0;
+    z-index: 3; }
+    main h1:before {
+      content: "";
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: -30px;
+      left: -60px;
+      border-radius: 50%;
+      background-color: #fff;
+      z-index: -1; }
   main ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 20px; }
+    gap: 20px;
+    clear: both; }
     main ul .dev-item {
-      width: 100%;
+      display: table;
+      width: 95%;
       height: auto;
+      min-height: 150px;
       position: relative;
-      padding: 20px;
+      margin: 0 0 20px 0;
       border-radius: 5px;
-      background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-      z-index: 3; }
+      background-color: #fff;
+      border: 1px solid #f3f3f3; }
       main ul .dev-item header {
         display: grid;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: auto; }
+        grid-template-columns: 17% 83%;
+        grid-template-rows: auto;
+        position: relative; }
         main ul .dev-item header img {
-          width: 70px;
-          height: 70px;
-          border-radius: 50%; }
+          width: 80px;
+          height: 80px;
+          position: absolute;
+          top: -20px;
+          left: -20px;
+          border-radius: 50%;
+          border: 5px solid #f3f3f3; }
       main ul .dev-item .user-info {
-        padding: 0 0 0 10px; }
+        padding: 5px 0 5px 10px; }
         main ul .dev-item .user-info strong {
           font-size: 16px;
           text-align: left;
-          color: #202020;
+          color: #222;
           display: block;
           padding: 5px 0; }
+        main ul .dev-item .user-info .icon-css,
+        main ul .dev-item .user-info .icon-html,
+        main ul .dev-item .user-info .icon-js,
+        main ul .dev-item .user-info .icon-nodejs,
+        main ul .dev-item .user-info .icon-reactjs,
+        main ul .dev-item .user-info .icon-reactnative {
+          display: none;
+          width: 30px;
+          height: 30px;
+          background-size: 30px 30px; }
+        main ul .dev-item .user-info .icon-css {
+          background-image: url("../img/icon-css.png");
+          background-repeat: no-repeat;
+          background-position: center; }
+          main ul .dev-item .user-info .icon-css.show {
+            display: inline-block !important; }
+        main ul .dev-item .user-info .icon-html {
+          background-image: url("../img/icon-html.png");
+          background-repeat: no-repeat;
+          background-position: center; }
+          main ul .dev-item .user-info .icon-html.show {
+            display: inline-block !important; }
+        main ul .dev-item .user-info .icon-js {
+          background-image: url("../img/icon-js.png");
+          background-repeat: no-repeat;
+          background-position: center; }
+          main ul .dev-item .user-info .icon-js.show {
+            display: inline-block !important; }
+        main ul .dev-item .user-info .icon-nodejs {
+          background-image: url("../img/icon-nodejs.png");
+          background-repeat: no-repeat;
+          background-position: center; }
+          main ul .dev-item .user-info .icon-nodejs.show {
+            display: inline-block !important; }
+        main ul .dev-item .user-info .icon-reactjs {
+          background-image: url("../img/icon-reactjs.png");
+          background-repeat: no-repeat;
+          background-position: center; }
+          main ul .dev-item .user-info .icon-reactjs.show {
+            display: inline-block !important; }
+        main ul .dev-item .user-info .icon-reactnative {
+          background-image: url("../img/icon-reactnative.png");
+          background-repeat: no-repeat;
+          background-position: center; }
+          main ul .dev-item .user-info .icon-reactnative.show {
+            display: inline-block !important; }
         main ul .dev-item .user-info span {
-          font-size: 13px;
+          font-size: 12px;
           text-align: left;
           color: dimgray;
           display: block; }
+          main ul .dev-item .user-info span.none {
+            display: none; }
       main ul .dev-item p {
-        font-size: 14px;
+        font-size: 13px;
         text-align: left;
-        color: slategray;
-        padding: 10px; }
+        color: dimgray;
+        line-height: 1.5em;
+        margin: 0 20px 30px 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #f3f3f3; }
       main ul .dev-item a {
         display: block;
-        width: calc(100% - 20px);
-        height: auto;
-        font-size: 12px;
-        text-align: center;
-        color: #fff;
-        margin: 10px;
+        width: 50px;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: url("https://png2.cleanpng.com/sh/d89fb2d72a12b0227dbfd4d52e08fda1/L0KzQYm3WME3N5JAjJH0aYP2gLBuTfJzaZ9pRd54Z3AwgMP2hQVkfF5pfeVyZ36wdrF1lL1lep0yfJ92LYTrdX75jBd2bZ1ug9c2NXK6RoHqg8Q2a5RmUKc3Nki5QYqBVsYyPWQ5TKg8MUe1Q4m3Ub5xdpg=/kisspng-brand-logo-product-design-font-drl-d-m-the-roguelike-5b760cc45cca85.6861986615344631723801.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 48px auto;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
         padding: 10px;
-        text-decoration: none;
-        background-color: #7d40e7;
-        border-radius: 5px;
+        background-color: dimgray;
         transition: .3s; }
         main ul .dev-item a:hover {
-          background-color: #6931ca; }
-
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  box-sizing: border-box;
-  list-style: none; }
-
-html, body, #root {
-  height: 100vh;
-  background-color: #F9F9F9; }
-
-body {
-  background-color: #e5e6f0;
-  font-family: Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+          background-color: #7d40e7; }
+      main ul .dev-item span.followers {
+        font-size: 12px;
+        text-align: left;
+        color: dimgray;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: inline-block;
+        padding: 5px 20px; }
+        main ul .dev-item span.followers strong {
+          font-size: 12px;
+          text-align: center;
+          color: #222;
+          font-weight: bold;
+          background-color: rgba(27, 31, 35, 0.08);
+          padding: 2px 5px;
+          border-radius: 5px; }
+  main .map-container {
+    width: 100%;
+    height: 600px; }
+    main .map-container .map-pin {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 4px solid #fff; }
